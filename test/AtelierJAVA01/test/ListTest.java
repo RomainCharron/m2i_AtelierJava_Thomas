@@ -6,6 +6,8 @@
 package AtelierJAVA01.test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -118,6 +120,62 @@ public class ListTest {
     public void tRemoveOK(){
         System.out.println("#### Démarage des test Unitaire tRemoveOK");
         
+        String[] tabString = {"Romain","Binor","Asuna"}; 
+        ArrayList<String> listnom = new ArrayList(Arrays.asList(tabString));
+        
+        listnom.remove(0);
+
+        for (String string : listnom) {
+            
+            System.out.println("" + string );
+        }
+        
+        
+        
         System.out.println();
+    }
+    @Test
+    public void  tremoveAllOK()
+    {
+        System.out.println("#### Démarage des test Unitaire tremoveAllOK");
+        
+        String[] tabString = {"Rouge","Vert","Jaune"}; 
+        ArrayList<String> listcouleur = new ArrayList(Arrays.asList(tabString));
+        
+        String[] tabString2 = {"Rouge","Jaune"}; 
+        ArrayList<String> listcouleur2 = new ArrayList(Arrays.asList(tabString2));
+        
+        listcouleur.removeAll(listcouleur2);
+        
+        for (String string : listcouleur) {
+            
+            System.out.println("" + string );
+        }
+        System.out.println();
+    }
+    @Test
+    public void arrayIteratorok()
+    {
+        System.out.println("#### Démarage des test Unitaire arrayIteratorok");
+        
+        String[] tabString = {"Rouge","Vert","Jaune"}; 
+        ArrayList<String> listcouleur = new ArrayList(Arrays.asList(tabString));
+        {
+            Iterator<String> uniterator = listcouleur.iterator();
+            String objet;
+            while (uniterator.hasNext()) {            
+                objet = uniterator.next();
+                System.out.println(objet);
+            }
+            System.out.println("");
+        }
+        {
+            String objet;
+            while (listcouleur.iterator().hasNext()) {            
+                objet = listcouleur.iterator().next();
+                System.out.println(objet);
+            }
+        }
+            
     }
 }

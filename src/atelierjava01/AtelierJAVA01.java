@@ -96,6 +96,7 @@ public class AtelierJAVA01 {
             System.out.println(object.getClass());
         }
         
+        
     }
     
 }
