@@ -21,6 +21,8 @@ public class Fermier {
         this.setSpecialite(specialite);
         
         
+        
+        
     }
     
     
