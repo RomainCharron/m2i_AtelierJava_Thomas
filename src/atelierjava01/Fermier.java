@@ -6,7 +6,7 @@
 package atelierjava01;
 
 /**
- *
+ *123
  * @author Formation
  */
 public class Fermier {
@@ -19,6 +19,8 @@ public class Fermier {
         this.setNom(nom);
         this.setPrenom(prenom);
         this.setSpecialite(specialite);
+        
+        
     }
     
     
