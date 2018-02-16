@@ -5,10 +5,41 @@
  */
 package atelierjava01.exercice_ferme;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Formation
  */
-public class Ferme extends Terrain{
+public class Ferme {
+
+    private Double budget;
+    private String nom;
+    private ArrayList<Ressource> listRessource = new ArrayList<>();
+    private ArrayList<Terrain> listTerrain = new ArrayList<>();
+    
+    public Ferme(Double budget, String nom) {
+        this.budget = budget;
+        this.nom = nom;
+    }
+
+    public void setBudget(Double budget) {
+        this.budget = budget;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Double getBudget() {
+        return budget;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+    
+   
+    
     
 }

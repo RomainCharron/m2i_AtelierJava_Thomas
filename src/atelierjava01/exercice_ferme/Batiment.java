@@ -9,6 +9,10 @@ package atelierjava01.exercice_ferme;
  *
  * @author Formation
  */
-public class Batiment {
+public class Batiment extends Terrain{
+
+    public Batiment() {
+        super(0);
+    }
     
 }
