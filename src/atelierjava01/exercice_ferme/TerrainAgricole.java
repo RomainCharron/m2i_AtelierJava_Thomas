@@ -9,6 +9,10 @@ package atelierjava01.exercice_ferme;
  *
  * @author Formation
  */
-public class TerrainAgricole extends Terrain{
+public class TerrainAgricole  extends Terrain{
+
+    public TerrainAgricole() {
+        super(0);
+    }
     
 }
