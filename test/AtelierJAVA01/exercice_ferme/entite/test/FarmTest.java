@@ -5,7 +5,7 @@
  */
 package AtelierJAVA01.exercice_ferme.entite.test;
 
-import atelierjava01.exercice_ferme.entite.Ferme;
+import atelierjava01.exercice_ferme.entite.Joueur;
 import atelierjava01.exercice_ferme.service.FermerService;
 import java.util.Iterator;
 import java.util.Map;
@@ -72,5 +72,56 @@ public class FarmTest {
         instenceService.inscription("Binor", "Cocob5");
         instenceService.inscription("Asuna", "Cocob5");
         
+    }
+    // Login
+    
+    //
+    private void testLoginOK00(String login, String mdp)
+    {
+        FermerService instenceService = new FermerService();
+        
+        if(!instenceService.Connecter(login, mdp))
+        {
+            throw  new RuntimeException("Le login ou le mots de pass sont incorrect");
+        }
+        else
+        {
+            System.out.println("Le compte existe" + login);
+        }
+    }
+    
+    @Test
+    public void testLoginOK01()
+    {
+        testLoginOK00("Binor", "Coco55");
+    }
+    
+    @Test
+    public void testLoginOK02()
+    {
+        testLoginOK00("Asuna", "Coco55");
+    }
+    
+    @Test
+    public void testLoginOK03()
+    {
+        testLoginOK00("Binor2", "Cocob5");
+    }
+    
+    @Test
+    public void testLoginOK04()
+    {
+        testLoginOK00("Asuna2", "Cocob5");
+    }
+    
+    @Test(expected = RuntimeException.class)
+    public void testLoginKO01()
+    {
+        testLoginOK00("Asuna2", "gongi07");
+    }
+    @Test(expected = RuntimeException.class)
+    public void testLoginKO02()
+    {
+        testLoginOK00("Asuna3", "Cocob5");
     }
 }
