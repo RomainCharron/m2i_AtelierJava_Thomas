@@ -7,6 +7,7 @@ package atelierjava01.exercice_ferme.entite;
 
 //import java.util.*;
 
+import atelierjava01.exercice_ferme.entiti.Ressource;
 import java.util.ArrayList;
 
 

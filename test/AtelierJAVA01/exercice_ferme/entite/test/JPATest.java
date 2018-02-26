@@ -37,17 +37,19 @@ public class JPATest {
     }
     
     @Test
-    public boolean select01_OK(){
+    public void select01_OK(){
     
         EntityManager em = Persistence.createEntityManagerFactory("PU_Charron").createEntityManager();
         
         Query qQuery = em.createQuery(""
-                + "SELECT j FROM Joueur j "
+                + "SELECT j "
+                + "FROM Joueur j "
                 + "WHERE j.nom = :pseudo "
                 + "AND j.motdepasse = :password");
         qQuery.setParameter("password", "Marco");
         qQuery.setParameter("pseudo", "Polo55");
         
-        return (Joueur)qQuery.getSingleResult() != null; 
+//        return (Joueur)qQuery.getSingleResult() != null; /**/
+        //return true;
     }
 }

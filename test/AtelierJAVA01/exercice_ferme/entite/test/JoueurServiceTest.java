@@ -19,13 +19,13 @@ import static org.junit.Assert.*;
  */
 public class JoueurServiceTest {
     
-    private static final String PASSWORD_PATTERN_ORIGINAL =
-              "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
-    private static final String PASSWORD_PATTERN  = 
-            "[A-Za-z].{6,20}";
-    
-    private static final String PASSWORD_PATTERN2  = 
-            "[B]";
+//    private static final String PASSWORD_PATTERN_ORIGINAL =
+//              "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
+//    private static final String PASSWORD_PATTERN  = 
+//            "[A-Za-z].{6,20}";
+//    
+//    private static final String PASSWORD_PATTERN2  = 
+//            "[B]";
     
     /**
      * - nini 3 lettre max 8
@@ -94,7 +94,7 @@ public class JoueurServiceTest {
     {
         JoueurService instenceService = new JoueurService();
         
-        if(!instenceService.connecter(login, mdp))
+        if(instenceService.connecter(login, mdp) == null)
         {
             throw  new RuntimeException("Le login ou le mots de pass sont incorrect");
         }
@@ -154,4 +154,26 @@ public class JoueurServiceTest {
     {
         testLoginOK00("AsunaNotExi2", "Cocob5");
     }
+    
+    @Test
+    public void ConnectionOK()
+    {
+        final String login = "RoroCom01", password = "Coco55";
+        
+        JoueurService iService = new  JoueurService();
+        iService.inscription(login, password);
+        Joueur unJoueur = iService.connecter(login, password);
+        
+        if(unJoueur != null)
+        {
+            System.out.println("le Joueur est : " + unJoueur.getNom());
+        }
+        else
+        {
+            throw  new RuntimeException("Le login ou le mots de pass sont incorrect");
+        }
+        
+        iService.rejoindrePartie(unJoueur.getId());
+    }
+    
 }

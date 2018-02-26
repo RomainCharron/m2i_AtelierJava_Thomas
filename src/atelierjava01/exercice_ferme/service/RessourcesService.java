@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atelierjava01.exercice_ferme;
+package atelierjava01.exercice_ferme.service;
 
 /**
  *
  * @author Formation
  */
-public class TerrainAgricole  extends Terrain{
-
-    public TerrainAgricole() {
-        super(0);
-    }
+public class RessourcesService {
+    
     
 }

@@ -11,12 +11,12 @@ package atelierjava01.exercice_ferme.entite;
  */
 public class Program {
     
-    static Ferme uneFerme;
+    //static Joueur uneFerme;
     
     public static void main(String[] args) {
         
         System.out.println("Run exercice_ferme");
-        uneFerme = new Ferme(Double.NaN, "La ferme de Binor");
+        //uneFerme = new Joueur(Double.NaN, "La ferme de Binor","qsdqsdqsd");
         
     }
 }
